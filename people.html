@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <title>Project1</title>
+	<style type="text/css" src = "‪peoplefinders.css">
+	
+	@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro");
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  font-family: 'Crimson Pro', serif;
+  font-weight: 300 !important;
+  /* overflow: hidden; */
+}
+/* profile images of users */
+img {
+  max-width: 70%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10%;
+  margin-top: 20px;
+  box-shadow: 10px 6px 6px 5px #FFFFFF;
+}
+/* the people finders logo in the top header */
+.logo {
+  max-width: 50%;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 10%;
+  margin-top: 20px;
+  
+}
+
+.img_box {
+  display: flex;
+  justify-content: center;
+}
+
+/* navigation bar styling */
+.navbar {
+  padding: 20px 0;
+  background-color: rgb(11,11,69);
+  color: white;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  font-family: 'Crimson Pro', serif;
+  /*height: 10vw;*/
+}
+
+/* main display area*/
+.main {
+  top: 12%;
+  text-align: center;
+  padding: 3.5% 0 5% 0;
+  background-color: lightgrey;
+  color:rgb(11,11,69); 
+}
+
+/* No Of Users part */
+.users_number {
+  bottom: 0%;
+  left: 40%;
+  position: fixed;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+     display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color:rgb(11,11,69);
+  width: 20%;
+  height: 100px; 
+
+ 
+
+}
+/* No Of Users blue bar, where colour and text colour is decided */
+.users_number > input {
+  
+  bottom: 80px;
+  background-color: lightgrey;
+   border-radius: 15px;
+   color: black;
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+
+
+}
+
+.users_number select {
+  background-color: white;
+  margin-top: 7px;
+  padding: 3.5px 15px;
+  width: 7rem;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* each individual's card being made and styled, it looks like a grid with rectangle cards placed equidistant across the screen */
+.cards_section {
+  margin-inline: auto;
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 50px auto;
+  font-family: 'Crimson Pro', serif;
+  top: 20%;
+
+}
+
+.person_card {
+  color: white;
+  height: 25rem;
+  width: 20rem;
+  padding: 15px;
+  border-radius: 0px;
+  box-shadow: 0px 15px 10px -15px #FFFFFF;
+  font-family: 'Crimson Pro', serif;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+}
+
+/* each individual's details like location*/
+.person_card h2 {
+  margin-top: 5px;
+  margin-bottom: 7.5px;
+  font-weight: 700 !important;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+/* each individual's details like email, number, age, DOB etc*/
+.person_card p {
+  font-weight: 600;
+  font-family: 'Crimson Pro', serif;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+.person_card.h2:hover
+ {
+  background-color: green;
+  color: white;
+}
+
+.card_bottom div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  align-items: center;
+  text-align: center;
+}
+
+/* the icons beside each filter like a male icon for the male filter etc*/
+.icon {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+   margin-top: 20px;
+   box-shadow: none;
+  
+}
+.icon2 {
+  width:80px;
+  height: 60px;
+  object-fit: cover;
+  align-content: left;
+   box-shadow: none;
+  
+}
+/* bottom filter bar, same colour as the header, contains the few filters like age, gender etc*/
+.filter_section {
+  position: fixed;
+  top: 13%;
+  bottom: 100;
+  right: : 0;
+  width: 100vw;
+  padding-top: 15px;
+  background-color: #222222;
+  /* height: fit-content; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  font-family: 'Crimson Pro', serif;
+}
+
+.filter_section > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* original data that needs to be on standby everytime you refresh your page*/
+#data {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* all the filter buttons */
+.optionbuttons {
+  width: 100%;
+  margin-top: 15px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  font-family: 'Crimson Pro', serif;
+}
+
+.optionbuttons button {
+  padding: 5px 15px;
+  border-radius:160px;
+  outline: none;
+  border: none;
+  background: lightgrey;
+  color: black;
+  cursor: pointer;
+  font-family: 'Crimson Pro', serif;
+  transition-duration: 0.4s;
+}
+.optionbuttons button:hover {
+  background-color: green;
+  color: white;
+}
+.space{
+  top 20;
+}
+
+
+</style>
+	<title>API ASSIGNMENT</title>
+</head>
+<body>
+<!-- NAVBAR SECTION-->
+  <div class="navbar">
+    <img src="logo.jpg" class="icon2">
+    <h1 id="greeting">hey! welcome to people finders!</h1>
+
+    
+  </div>
+
+  <!-- main CONTAINER-->
+  <div class="main">
+
+    <!-- Filter Data Section -->
+    <div class="filter_section">
+      <span>
+        <label for="data">choose what you want to see&nbsp;</label>
+        
+      </span>
+
+      <!-- Option Buttons -->
+      <div class="optionbuttons">
+       
+        <span><img src="grid.png" alt="select" class="icon" ><button id="filter-show-all">all users</button></span>
+         <span><img src="alphabetic.png" alt="select" class="icon"><i class="space" ></i><button id="filter-sort-first-name">first name alphabetically</button></span>
+         <span><img src="age.png" alt="select" class="icon"><button id="filter-sort-age">age</button></span>
+        <span><img src="man.png" alt="select" class="icon"><button id="filter-show-male">male users</button></span>
+        <span><img src="hairstyle.png" alt="select" class="icon"><button id="filter-show-female">female users</button></span>
+       
+        
+        
+        
+      </div>
+    </div>
+
+    <!-- Person Cards -->
+    <div class="cards_section-container">
+      <div id="person-cards" class="cards_section"> </div>
+    </div>
+    <!-- No Of Users Drop-down -->
+    <div class="users_number">
+      <label for="people-number">How many people are you looking for today?</label> <br />
+      <input id="people-number" type="number" value="40" min="0" />
+    </div>
+
+    
+  </div>
+<script type="text/javascript" src="peoplefinders.js"></script>
+</body>
+</html>
